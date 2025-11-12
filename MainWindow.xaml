@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Verko_MasterFloor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" FontFamily="Segoe UI" Icon="ress/Мастер пол.ico">
+        Title="MainWindow" Height="450" Width="800" FontFamily="Segoe UI" Icon="ress/Мастер пол.ico" Background="#F4E8D3">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
         
         <Image Source="ress/Мастер пол.png" HorizontalAlignment="Left"></Image>
@@ -19,6 +19,6 @@
 
         <Frame Grid.Row="1" Name="MainFrame" ContentRendered="MainFrame_ContentRendered" NavigationUIVisibility="Hidden"></Frame>
 
-        <Button Content="Back" Name="BtnBack" HorizontalAlignment="Right" Click="BtnBack_Click"></Button>
+        <Button Content="Назад" Name="BtnBack" HorizontalAlignment="Right" Click="BtnBack_Click"></Button>
     </Grid>
 </Window>

@@ -64,11 +64,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MaterialCalculation.cs" />
     <Compile Include="Materials.cs">
       <DependentUpon>VerkoModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MaterialTypes.cs">
       <DependentUpon>VerkoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PartnerHistoryPage.xaml.cs">
+      <DependentUpon>PartnerHistoryPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PartnerPage.xaml.cs">
       <DependentUpon>PartnerPage.xaml</DependentUpon>
@@ -122,6 +126,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PartnerHistoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PartnerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

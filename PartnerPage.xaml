@@ -9,12 +9,16 @@
       Title="PartnerPage" FontFamily="Segoe UI">
 
     <Grid>
-        <ListView Name="PartnerListView">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <ListView Name="PartnerListView" Grid.Row="0">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="650"/>
+                            <ColumnDefinition Width="560"/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
@@ -35,9 +39,14 @@
                         <TextBlock Text="{Binding FullName}" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left"></TextBlock>
                         <TextBlock Text="{Binding PartnerPhone}" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left"></TextBlock>
                         <TextBlock Text="{Binding PartnerRating, StringFormat=Рейтинг: 0}" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left"></TextBlock>
+
+                        <Button Content="Посмотреть историю" Name="HistoryButton" Click="HistoryButton_Click" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right"/>
+                        <Button Content="Редактировать" Name="EditButton" Click="EditButton_Click" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right"/>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
+        <Button Grid.Row="1" HorizontalAlignment="Right" Content="Добавить партнера" Name="AddButton" Click="AddButton_Click"/>
     </Grid>
 </Page>

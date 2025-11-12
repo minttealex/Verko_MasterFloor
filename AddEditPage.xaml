@@ -6,9 +6,63 @@
       xmlns:local="clr-namespace:Verko_MasterFloor"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AddEditPage">
+      Title="AddEditPage" FontFamily="Segoe UI">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Тип : " Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <ComboBox Name="ComboTypes" Grid.Column="1" Grid.Row="0" Width="190" Height="25" HorizontalAlignment="Left" VerticalContentAlignment="Center" 
+  SelectedValuePath="PartnerTypeID" SelectedValue="{Binding PartnerTypeID, Mode=TwoWay}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding PartnerTypeName}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <TextBlock Text="Наименование: " Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBox Text="{Binding PartnerCompanyName}" Grid.Row="1" Grid.Column="1" Height="25" HorizontalAlignment="Left" Width="190"/>
+
+        <TextBlock Text="Фамилия директора: " Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBox Text="{Binding PartnerDirectorSurname}" Grid.Row="2" Grid.Column="1" Height="25" HorizontalAlignment="Left" Width="190"/>
+
+        <TextBlock Text="Имя директора: " Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBox Text="{Binding PartnerDirectorName}" Grid.Row="3" Grid.Column="1" Height="25" HorizontalAlignment="Left" Width="190"/>
+
+        <TextBlock Text="Отчество директора: " Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBox Text="{Binding PartnerDirectorPatronymic}" Grid.Row="4" Grid.Column="1" Height="25" HorizontalAlignment="Left" Width="190"/>
         
+
+        <TextBlock Text="Электронная почта: " Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBox Text="{Binding PartnerEmail}" Grid.Row="0" Grid.Column="3" Height="25" HorizontalAlignment="Left" Width="190"/>
+
+        <TextBlock Text="Телефон: " Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBox Text="{Binding PartnerPhone}" Grid.Row="1" Grid.Column="3" Height="25" HorizontalAlignment="Left" Width="190"/>
+
+        <TextBlock Text="Юридический адрес: " Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBox Text="{Binding PartnerAddress}" Grid.Row="2" Grid.Column="3" Height="25" HorizontalAlignment="Left" Width="190"/>
+
+        <TextBlock Text="ИНН: " Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBox Text="{Binding PartnerINN}" Grid.Row="3" Grid.Column="3" Height="25" HorizontalAlignment="Left" Width="190"/>
+
+        <TextBlock Text="Рейтинг: " Grid.Row="4" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBox Text="{Binding PartnerRating}" Grid.Row="4" Grid.Column="3" Height="25" HorizontalAlignment="Left" Width="190"/>
+
+        <Button Grid.Row="5" Content="Сохранить" Name="SaveButton" Click="SaveButton_Click" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Grid.Row="5" Content="Удалить" Name="DeleteButton" Click="DeleteButton_Click" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>
 </Page>

@@ -29,9 +29,19 @@ namespace Verko_MasterFloor
             PartnerListView.ItemsSource = currentPartners;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-            Manager.MainFrame.Navigate(new AddEditPage());
+            Manager.MainFrame.Navigate(new AddEditPage((sender as Button).DataContext as Partners)); 
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new AddEditPage(null));
+        }
+
+        private void HistoryButton_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new PartnerHistoryPage((sender as Button).DataContext as Partners));
         }
     }
 }
